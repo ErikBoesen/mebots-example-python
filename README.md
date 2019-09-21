@@ -1,9 +1,9 @@
-# Sample GroupMe Python Bot
-**Python** | [**JavaScript**](https://github.com/groupme/mebots-example-nodejs)
+# Sample GroupMe Python Bot using MeBots
+**Python** | [**JavaScript**](https://github.com/ErikBoesen/mebots-example-javascript)
 
 ## Introduction
 
-A simple GroupMe bot that reacts to messages sent within a group.
+A simple GroupMe bot that reacts to messages sent within a group, designed to demonstrate the MeBots API and serve as a template for other bots.
 
 Please see [this tutorial](https://github.com/ErikBoesen/bot-tutorial-python) for general information about how to set up a Python bot, including Heroku setup instructions.
 
