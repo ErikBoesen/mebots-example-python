@@ -1,5 +1,5 @@
 # Sample GroupMe Python Bot using MeBots
-**Python** | [**JavaScript**](https://github.com/ErikBoesen/mebots-example-javascript)
+**Python** | [**JavaScript**](https://github.com/ErikBoesen/mebots-example-javascript) | [**Ruby**](https://github.com/ErikBoesen/mebots-example-ruby)
 
 ## Introduction
 
