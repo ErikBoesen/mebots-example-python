@@ -8,6 +8,10 @@ A simple GroupMe bot that reacts to messages sent within a group, designed to de
 Please see [this tutorial](https://github.com/ErikBoesen/bot-tutorial-python) for general information about how to set up a Python bot, including Heroku setup instructions.
 
 ## Setup
+First, install all the necessary dependencies with `pip`:
+```sh
+pip3 install -r requirements.txt
+```
 Open `bot.py` in your favorite editor and find the line where the bot is instantiated:
 ```py
 bot = mebots.Bot('your_bot_shortname_here', os.env['BOT_TOKEN'])
