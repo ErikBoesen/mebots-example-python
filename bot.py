@@ -14,6 +14,8 @@ def home():
 
 @app.route('/', methods=['POST'])
 def receive():
+    data = request.get_json()
+    group_id = data["group_id"]
     print('Incoming message:')
     print(data)
 
