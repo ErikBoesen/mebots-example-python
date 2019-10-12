@@ -5,7 +5,7 @@ import mebots
 from flask import Flask, request
 
 app = Flask(__name__)
-bot = mebots.Bot('your_bot_shortname_here', os.env['BOT_TOKEN'])
+bot = mebots.Bot('your_bot_shortname_here', os.environ['BOT_TOKEN'])
 
 @app.route('/', methods=['GET'])
 def home():
