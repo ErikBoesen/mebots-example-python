@@ -3,28 +3,43 @@
 
 ## Introduction
 
-A simple GroupMe bot that reacts to messages sent within a group, designed to demonstrate the MeBots API and serve as a template for other bots.
+A simple GroupMe bot that reacts to a user saying "ping" in a group. Designed to demonstrate the MeBots API and serve as a template for other bots.
 
-Please see [this tutorial](https://github.com/ErikBoesen/bot-tutorial-python) for general information about how to set up a Python bot, including Heroku setup instructions.
+Please see [this tutorial](https://github.com/ErikBoesen/bot-tutorial-python) for to get general intuition on how a Python bot works in GroupMe, but note that the approach for running a MeBots bot will be quite different.
 
-## Setup
-First, install all the necessary dependencies with `pip`:
-```sh
-pip3 install -r requirements.txt
-```
-Open `bot.py` in your favorite editor and find the line where the bot is instantiated:
-```py
-bot = mebots.Bot('your_bot_shortname_here', os.env['BOT_TOKEN'])
-```
-Replace `your_bot_shortname_here` with the shortname of your bot, which is visible while editing your bot on the MeBots web interface.
+It is recommended to run this example bot, and other bots, on AWS Lambda or a similar serverless host, using the `serverless` package. This approach is convenient for GroupMe bots because they only run to generate a response once in a while, so most bots can be hosted for free.
 
-Then, set the `BOT_TOKEN` environment variable in your shell to the token available in the bot editing panel.
+
+## Prerequisites
+Papaya is meant to run on AWS Lambda using the Serverless framework.
+
+To install serverless on your local machine:
 ```sh
-export BOT_TOKEN=0123456789abcdef
+npm install -g serverless
 ```
-Or on Heroku:
+
+## Deployment
+Install `pip` dependencies locally in the `vendor` directory:
 ```sh
-heroku config:set BOT_TOKEN=0123456789abcdef
+pip install -r requirements.txt -t vendor
+```
+
+Deploy using serverless:
+```sh
+serverless deploy
+```
+
+Configure your OpenAI key as an environment variable:
+```sh
+aws lambda update-function-configuration --function-name papaya-dev-receive --environment "Variables={OPENAI_API_KEY=abcdef1234567890}"
+```
+
+The bot should now be ready to receive messages!
+
+## Logs
+To view the logs:
+```sh
+serverless logs -f receive
 ```
 
 ## Author
