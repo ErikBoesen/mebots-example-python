@@ -29,15 +29,12 @@ Deploy using serverless:
 serverless deploy
 ```
 
-Configure your OpenAI key as an environment variable:
-```sh
-aws lambda update-function-configuration --function-name papaya-dev-receive --environment "Variables={OPENAI_API_KEY=abcdef1234567890}"
-```
+The bot should now be ready to receive messages! A lambda function URL will be logged that can be used as the MeBots bot callback URL to receive messages.
 
-The bot should now be ready to receive messages!
+Check out the [MeBots Help Group](https://mebots.io/help) if you need any guidance.
 
 ## Logs
-To view the logs:
+To view your bot's logs:
 ```sh
 serverless logs -f receive
 ```
